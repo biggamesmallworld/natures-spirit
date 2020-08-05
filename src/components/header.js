@@ -18,15 +18,22 @@ const Header = () => (
       }
     `}
     render={data => (
-      <header style={{ background: `#000`, marginBottom: `1.45rem`, }} >
+      <header style={{ background: `#1e1e1e`, marginBottom: `1.45rem`, }} >
         <div style={{ margin: `0 auto`, maxWidth: 960, padding: `1.45rem 1.0875rem`, display: `flex`, justifyContent: `space-between`, alignItems: `center`, }} >
-          <h1 style={{ margin: 0 }}>
+          <h3 className='branding' style={{ margin: 0 }}>
             <Link to="/" style={{ color: `white`, textDecoration: `none`, }} >
-              <img src={logo} alt="logo" />
-              Nature's Spirit  Photography
+              <img className='header-logo' src={logo} alt="logo" />
+              <p>Nature's Spirit <br />Photography</p>
+              <div className="clearDiv"></div>
+              <p className="tagline">Explore, Create, Inform, Inspire</p>
             </Link>
-          </h1>
-          <ul style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
+          </h3>
+          <ul className="nav-menu" style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
+            <li>
+              <Link to={`/albums/`} style={{ color: `white`, textDecoration: `none`, fontFamily: `sans-serif`, }} >
+                Albums
+              </Link>
+            </li>
             {data.wordpressMenusMenusItems.items.map(item => (
               <li key={item.slug} style={{ margin: `0 10px` }}>
                 <Link to={`/${item.slug}`} style={{ color: `white`, textDecoration: `none`, fontFamily: `sans-serif`, }} >

@@ -8,8 +8,8 @@ const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <ul style={{ listStyle: "none" }}>
-      {data.allWordpressPost.edges.map(post => (
-        <li style={{ padding: "20px 0", borderBottom: "1px solid #ccc" }}>
+      {data.allWordpressPost.edges.map((post, index) => (
+        <li key={index} style={{ padding: "20px 0", borderBottom: "1px solid #ccc" }}>
           <Link to={`/post/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
             <div style={{ width: "75%" }}>
               <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />

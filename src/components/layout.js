@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © Nature's Spirit Photography {new Date().getFullYear()}, Built by <a href="https://www.willnahmens.com">Will Nahmens</a> with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
