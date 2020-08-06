@@ -698,7 +698,7 @@ h1, h2, h3, h4, h5, p, a {
   padding: 10px;
 }
 
-img {
+main img {
   -webkit-box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
   box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
@@ -715,5 +715,10 @@ footer {
 
 footer p {
   margin-top: 50px;
+}
+
+footer a {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
