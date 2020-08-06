@@ -1,6 +1,7 @@
 import { StaticQuery, graphql, Link } from "gatsby"
 import React from "react"
 import logo from '../images/ns-logo.png'
+import signature from '../images/signature.png'
 
 const Header = () => (
   <StaticQuery
@@ -25,18 +26,24 @@ const Header = () => (
               <img className='header-logo' src={logo} alt="logo" />
               <p>Nature's Spirit <br />Photography</p>
               <div className="clearDiv"></div>
+              <img className="signature" src={signature} alt='Jim Nahmens'/>
               <p className="tagline">Explore, Create, Inform, Inspire</p>
             </Link>
           </h3>
           <ul className="nav-menu" style={{ listStyle: `none`, display: `flex`, margin: 0 }}>
-            <li>
-              <Link to={`/albums/`} style={{ color: `white`, textDecoration: `none`, fontFamily: `sans-serif`, }} >
+            <li style={{ margin: `0 10px` }}>
+              <Link to={`/albums/`} style={{ color: `white`, textDecoration: `none`,  }} >
                 Albums
+              </Link>
+            </li>
+            <li style={{ margin: `0 10px` }}>
+              <Link to={`/blog/`} style={{ color: `white`, textDecoration: `none`,  }} >
+                Blog
               </Link>
             </li>
             {data.wordpressMenusMenusItems.items.map(item => (
               <li key={item.slug} style={{ margin: `0 10px` }}>
-                <Link to={`/${item.slug}`} style={{ color: `white`, textDecoration: `none`, fontFamily: `sans-serif`, }} >
+                <Link to={`/${item.slug}`} style={{ color: `white`, textDecoration: `none`, }} >
                   {item.title}
                 </Link>
               </li>

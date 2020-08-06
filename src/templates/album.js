@@ -9,8 +9,9 @@ const AlbumTemplate = ({data}) => (
     <SEO title={data.wordpressWpAlbum.title} description="some description" />
     <h1>{data.wordpressWpAlbum.title}</h1>
     {data.wordpressWpAlbum.acf.images.map((element, index) => (
-      <Img key={index} resolutions={element.image.localFile.childImageSharp.resolutions} />
+      <Img key={index} fluid={element.image.localFile.childImageSharp.fluid} />
     ))}
+    <div className="clearDiv"></div>
   </Layout>
 )
 
@@ -25,11 +26,15 @@ export const query = graphql`
             image {
               localFile {
                 childImageSharp {
-                  resolutions(width: 500, height: 500) {
-                    src
-                    width
-                    height
+                  fluid(maxWidth: 400) {
                     srcSet
+                    src
+                    sizes
+                    aspectRatio
+                    presentationWidth
+                    srcSetWebp
+                    srcWebp
+                    tracedSVG
                   }
                 }
               }

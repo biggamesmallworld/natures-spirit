@@ -4,19 +4,20 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from 'gatsby'
 
-const AlbumPage = ({data}) => (
+const BlogPage = ({data}) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Blog" />
     <ul style={{ listStyle: "none" }}>
-      {data.allWordpressWpAlbum.edges.map((post, index) => (
-        <li key={index} style={{ padding: "20px 0" }}>
-          <Link to={`/albums/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
+      {data.allWordpressPost.edges.map((post, index) => (
+        <li key={index} style={{ padding: "20px 0", margin: "auto" }}>
+          <Link to={`/post/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
             <div style={{ width: "75%" }}>
-              <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: '20px' }} />
               <img src={post.node.featured_media.localFile.url} alt={post.node.featured_media.alt_text} />
+              <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />
               <p style={{ margin: 0, color: "grey" }}>
-                Posted on {post.node.date}
+                Written on {post.node.date}
               </p>
+              <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             </div>
           </Link>
         </li>
@@ -25,15 +26,19 @@ const AlbumPage = ({data}) => (
   </Layout>
 )
 
-export default AlbumPage
+export default BlogPage
 
 export const query = graphql`
   query {
-    allWordpressWpAlbum {
+    allWordpressPost {
       edges {
         node {
           title
+          excerpt
           slug
+          author {
+            name
+          }
           featured_media {
             localFile {
               url
@@ -41,6 +46,7 @@ export const query = graphql`
             alt_text
           }
           date(formatString: "MMMM DD, YYYY")
+
         }
       }
     }

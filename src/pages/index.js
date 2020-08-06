@@ -1,46 +1,17 @@
 import React from "react"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from 'gatsby'
+//import { graphql } from 'gatsby'
 
-const IndexPage = ({data}) => (
+const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <ul style={{ listStyle: "none" }}>
-      {data.allWordpressPost.edges.map((post, index) => (
-        <li key={index} style={{ padding: "20px 0", borderBottom: "1px solid #ccc" }}>
-          <Link to={`/post/${post.node.slug}`} style={{ display: "flex", color: "black", textDecoration: "none" }} >
-            <div style={{ width: "75%" }}>
-              <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} style={{ marginBottom: 0 }} />
-              <p style={{ margin: 0, color: "grey" }}>
-                Written by {post.node.author.name} on {post.node.date}
-              </p>
-              <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-            </div>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <h4>Driven by the challenge of capturing extraordinary marine mammal images for 20+ years. 
+      Passionate about creating informative designs that inspire.</h4>
   </Layout>
 )
 
 export default IndexPage
 
-export const query = graphql`
-  query {
-    allWordpressPost {
-      edges {
-        node {
-          title
-          excerpt
-          slug
-          author {
-            name
-          }
-          date(formatString: "MMMM DD, YYYY")
-        }
-      }
-    }
-  }
-`
+
