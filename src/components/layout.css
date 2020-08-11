@@ -694,20 +694,34 @@ h1, h2, h3, h4, h5, p, a {
   left: 0; 
 }
 
-.gatsby-image-wrapper img {
-  padding: 10px;
-}
-
 main img {
   -webkit-box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
   box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
 }
 
+.gatsby-image-wrapper {
+  padding: 10px;
+  width: calc( 50% - 20px );
+  height: 300px;
+  float: left;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0px 10px 40px 20px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
 .regular-text {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .14em;
+}
+
+.wp-block-image {
+  float: left;
+  margin-right: 20px;
 }
 
 .image-grid-item {
