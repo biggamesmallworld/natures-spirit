@@ -34,10 +34,10 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer className="regular-text">
-          © Nature's Spirit Photography {new Date().getFullYear()}, Built by <a href="https://www.willnahmens.com">Will Nahmens</a> with
+        <footer>
+          <p className="regular-text">© Nature's Spirit Photography {new Date().getFullYear()}, Built by <a href="https://www.willnahmens.com">Will Nahmens</a> with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org">Gatsby</a></p>
         </footer>
       </div>
     </>

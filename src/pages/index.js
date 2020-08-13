@@ -1,16 +1,15 @@
 import React from "react"
-//import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ImageGridClass from "../components/imageGrid"
-//import { graphql } from 'gatsby'
+import ImageGrid from "../components/ImageGrid"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <p className="regular-text">Driven by the challenge of capturing extraordinary marine mammal images for 20+ years. 
       Passionate about creating informative designs that inspire.</p>
-    <ImageGridClass />
+    <ImageGrid />
   </Layout>
 )
 
