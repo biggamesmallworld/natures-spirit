@@ -13,7 +13,7 @@ import whale7 from '../images/whale-7.jpg';
 import whale1 from '../images/whale-1.jpg';
 
 
-const ImageGrid = () => {
+const ImageGridComponent = () => {
   const allImages = [
       bear1,
       bear2,
@@ -86,4 +86,4 @@ const ImageGrid = () => {
   );
 };
 
-export default ImageGrid;
+export default ImageGridComponent;
